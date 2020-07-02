@@ -10942,12 +10942,12 @@ a.text-dark:focus {
   color: white !important;
 }
 
-#about-project,
-#about-code {
-  margin-top: 30px;
+#about-project {
+  margin-top: 80px;
 }
 
-.content-container {
-  padding-left: 30px;
+.custom-card {
+  width: 18rem;
+  height: 125px;
 }
 

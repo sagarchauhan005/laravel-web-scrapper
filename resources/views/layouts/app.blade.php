@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" name="viewport">
-    <title>Data structure and Algorithm</title>
+    <title>Laravel Web Scrapper</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('/js/app.js') }}"  type="text/javascript" defer></script>
 </head>
 <body>
 @include('layouts.nav')
 <div class="container-fluid">
-    <div class="row preview-container">
+    <div class="row">
         <div class="col-md-1"></div>
-            <div class="col-md-10 content-container main">
+            <div class="col-md-10">
                 @yield('content')
             </div>
         <div class="col-md-1"></div>
