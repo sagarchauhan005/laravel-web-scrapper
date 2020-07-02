@@ -1,0 +1,22 @@
+.navbar{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
+}
+
+.nav-bg-dark{
+    background-color: black !important;
+}
+.navbar-brand {
+    color: white !important;
+}
+
+
+#about-project, #about-code{
+    margin-top: 30px;
+}
+
+.content-container{
+    padding-left: 30px;
+}
