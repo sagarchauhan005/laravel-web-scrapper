@@ -17,6 +17,17 @@ let exist = compTableElem.length;
 let noData = "<p class='alert alert-danger'>Unable to fetch data....</p>";
 let table = $("#companies-table");
 
+function alterLinks() {
+    $('#table-results tr td:nth-child(2) a').each(function (index, elem) {
+        if (elem instanceof HTMLAnchorElement) {
+            let href = elem.getAttribute('href');
+            let replace = href.replace('/business/','get-business?company=');
+            elem.setAttribute('href',replace);
+        }
+
+    });
+}
+
 /*
 * Fetches the data over network and perform operation in table
 * */
@@ -36,6 +47,7 @@ function fetchData(link, page) {
                 table.prepend(noData);
             }else{
                 table.html(data);
+                alterLinks();
                 $("#prev").attr('data-page',prev);
                 $("#next").attr('data-page',next);
                 $("#total-pages").text($('#table-results').attr('data-pages'));
