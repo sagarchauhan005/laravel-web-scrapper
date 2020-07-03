@@ -19,3 +19,4 @@ Route::get('get-companies', function () {
 });
 Route::get('get-companies-table', 'CompanyDataController@getCompanies');
 Route::get('get-companies-table-by-page', 'CompanyDataController@getCompaniesByPage');
+Route::get('get-business', 'CompanyDataController@getBusiness');

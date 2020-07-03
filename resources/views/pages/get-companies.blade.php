@@ -12,12 +12,11 @@
         <div class="col-md-2 text-right"><h6 class="mb-4"><b>Total Pages</b> : <span id="total-pages">0</span></h6></div>
         <div class="col-md-2 text-right"><h6 class="mb-4"><b>Current Page</b> : <span id="current-page">0</span></h6></div>
 
-        <div class="col-md-12" id="select-company-type-container" style="height: 550px; overflow-y: scroll;">
+        <div class="col-md-12 card info-card" id="select-company-type-container">
             <div id="companies-table" class="load-companies-table" data-link="{{request()->get('link')}}">
                 <p>Fetching data....</p>
             </div>
         </div>
-        <div class="col-md-12"><br></div>
         <div class="col-md-6"><button type="button" class="btn btn-primary w-100 loadMore" data-page="1" data-link="{{request()->get('link')}}" id="prev">Previous</button></div>
         <div class="col-md-6"><button type="button" class="btn btn-primary w-100 loadMore" data-page="2" data-link="{{request()->get('link')}}" id="next">Next</button></div>
     </div>

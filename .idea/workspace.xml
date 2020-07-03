@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="751b6e6c-990f-4661-969e-edc7d4d9f2ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Helpers/CompanyBusinessPageParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/pages/company-page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/pages/company-types.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Helpers/ValidationHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Helpers/ValidationHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/get-companies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/get-companies.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,9 +158,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/pages" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -170,7 +184,9 @@
       <option name="presentableId" value="Default" />
       <updated>1593702090834</updated>
       <workItem from="1593702092404" duration="1794000" />
-      <workItem from="1593703900390" duration="22597000" />
+      <workItem from="1593703900390" duration="23544000" />
+      <workItem from="1593772683928" duration="3002000" />
+      <workItem from="1593781247826" duration="11593000" />
     </task>
     <servers />
   </component>
@@ -185,10 +201,10 @@
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
     <state x="472" y="33" width="1017" height="1045" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593760685197" />
-    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog" timestamp="1593712438260">
+    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog" timestamp="1593779412078">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593712438260" />
+    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593779412078" />
     <state x="737" y="473" width="476" height="165" key="NewPhpFileDialog" timestamp="1593711508542">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
@@ -197,10 +213,10 @@
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
     <state x="550" y="205" width="881" height="702" key="find.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1593707377263" />
-    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup" timestamp="1593766312961">
+    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup" timestamp="1593789398090">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1593766312961" />
+    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1593789398090" />
     <state x="688" y="455" width="605" height="200" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1593704951915">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
