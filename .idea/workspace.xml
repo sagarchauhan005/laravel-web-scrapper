@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="751b6e6c-990f-4661-969e-edc7d4d9f2ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexPageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webscrapper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webscrapper.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyDataController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Helpers/ValidationHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/get-companies.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexPageController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/pages/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +181,7 @@
       <option name="presentableId" value="Default" />
       <updated>1593702090834</updated>
       <workItem from="1593702092404" duration="1794000" />
-      <workItem from="1593703900390" duration="4278000" />
+      <workItem from="1593703900390" duration="20704000" />
     </task>
     <servers />
   </component>
@@ -190,18 +192,26 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="737" y="473" width="476" height="165" key="NewPhpFileDialog" timestamp="1593703809653">
+    <state x="472" y="33" width="1017" height="1045" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593760685197">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="737" y="473" width="476" height="165" key="NewPhpFileDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593703809653" />
+    <state x="472" y="33" width="1017" height="1045" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593760685197" />
+    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog" timestamp="1593712438260">
+      <screen x="61" y="33" width="1859" height="1047" />
+    </state>
+    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593712438260" />
+    <state x="737" y="473" width="476" height="165" key="NewPhpFileDialog" timestamp="1593711508542">
+      <screen x="61" y="33" width="1859" height="1047" />
+    </state>
+    <state x="737" y="473" width="476" height="165" key="NewPhpFileDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593711508542" />
     <state x="550" y="205" width="881" height="702" key="find.popup" timestamp="1593707377263">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
     <state x="550" y="205" width="881" height="702" key="find.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1593707377263" />
-    <state x="653" y="263" width="672" height="679" key="search.everywhere.popup" timestamp="1593707186718">
+    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup" timestamp="1593764513120">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="653" y="263" width="672" height="679" key="search.everywhere.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1593707186718" />
+    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1593764513120" />
     <state x="688" y="455" width="605" height="200" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1593704951915">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>

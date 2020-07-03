@@ -6,19 +6,20 @@
             Below mentioned is the list of programs written.</p>
     </div>
     <hr>
-    <h4 class="mb-2"><b>Select a company</b></h4>
-    <br>
-    <div class="row">
-            @foreach($companies as $company)
-                <div class="col-md-3 mb-4">
-                    <a href="#" data-link="{{$company['link']}}" class="company-card">
-                        <div class="card custom-card">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">{{$company['name']}}</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
+
+    <div class="row" id="companies-row">
+
+        {{--Select company type Row--}}
+        <div class="col-md-12" id="select-company-type-container">
+            <h4 class="mb-4"><b>Select a company</b></h4>
+            <ul class="list-group">
+                @foreach($companies as $company)
+                        <li class="list-group-item company-item" data-link="{{$company['link']}}" data-name="{{urlencode($company['name'])}}">
+                            {{$company['name']}}
+                        </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
+
 @endsection

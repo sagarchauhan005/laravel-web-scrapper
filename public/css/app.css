@@ -10951,3 +10951,17 @@ a.text-dark:focus {
   height: 125px;
 }
 
+#companies-row {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: black;
+  color: white;
+}
+

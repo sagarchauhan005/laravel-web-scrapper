@@ -13,4 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'IndexPageController@index');
+Route::get('/', 'CompanyDataController@index');
+Route::get('get-companies', function () {
+    return view('pages/get-companies');
+});
+Route::get('get-companies-table', 'CompanyDataController@getCompanies');
+Route::get('get-companies-table-by-page', 'CompanyDataController@getCompaniesByPage');

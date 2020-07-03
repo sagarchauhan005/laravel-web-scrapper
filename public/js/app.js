@@ -1,34 +1,3 @@
-//require('./bootstrap');
-
-window._ = require('lodash');
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = require('axios');
-
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
-// import Echo from 'laravel-echo';
-
-// window.Pusher = require('pusher-js');
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
-
 /*!
  * jQuery JavaScript Library v3.5.1
  * https://jquery.com/
@@ -10901,3 +10870,72 @@ if ( typeof noGlobal === "undefined" ) {
 
 return jQuery;
 } );
+
+/*
+* Redirects to to the company page
+* */
+$(".company-item").click(function () {
+    let link = $(this).attr('data-link');
+    let type = $(this).attr('data-name');
+    let url = "/get-companies?link="+link+"&type="+type;
+    window.location.href=url;
+});
+
+
+/*
+* Loads the company table
+* */
+let compTableElem = $(".load-companies-table");
+let exist = compTableElem.length;
+let noData = "<p class='alert alert-danger'>Unable to fetch data....</p>";
+let table = $("#companies-table");
+
+/*
+* Fetches the data over network and perform operation in table
+* */
+function fetchData(link, page) {
+    $('.spinner-border').show();
+    let pageInt = parseInt(page);
+    let prev = pageInt - 1;
+    let next = pageInt + 1;
+
+    $.ajax({
+        type: "GET",
+        url: "/get-companies-table-by-page",
+        data: {link : link, page : page},
+        success: function(data) {
+            $('.spinner-border').hide();
+            if(data===undefined || data==null || data.length===0){
+                table.prepend(noData);
+            }else{
+                table.html(data);
+                $("#prev").attr('data-page',prev);
+                $("#next").attr('data-page',next);
+                $("#total-pages").text($('#table-results').attr('data-pages'));
+                $("#current-page").text(page);
+            }
+        },
+        error: function(reject) {
+            $('.spinner-border').hide();
+            table.html(noData);
+        }
+    });
+}
+
+if(exist){
+    let link = compTableElem.attr('data-link');
+    fetchData(link, 1);
+}
+
+/*
+*
+* Loads more company table data on click
+* */
+$(".loadMore").click(function () {
+    let loadMore = $(this);
+    let link = loadMore.attr('data-link');
+    let page = loadMore.attr('data-page');
+
+    //fetch data
+    fetchData(link,page);
+});
