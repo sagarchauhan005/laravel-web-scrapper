@@ -2,6 +2,12 @@
 
 Webscrapper made using Laravel and Javascript
 
+# Getting Started
+composer update
+npm install
+php artisan make:database webscrapper mysql
+php artisan migrate
+
 # Author
 
  [Sagar Chauhan](https://twitter.com/chauhansahab005) works as a Technical Lead at [Veu](https://www.theveu.com) and [Animal Advertising Pvt Ltd](https://www.weareanimal.co).

@@ -13,7 +13,7 @@
 
     <div class="row" id="companies-row">
         {{--Select company type Row--}}
-        <div class="col-md-12 card info-card" id="select-company-type-container">
+        <div class="col-md-12 card info-card">
             <h4 class="mb-4"><b>Select a company</b></h4>
             <ul class="list-group">
                 @foreach($companies as $company)
