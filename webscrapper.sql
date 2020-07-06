@@ -1,6 +1,5 @@
 -- MySQL dump 10.13  Distrib 5.7.30, for Linux (x86_64)
 --
--- Host: exedifyapp.cwkrq50gxtpu.ap-south-1.rds.amazonaws.com    Database: webscrapper
 -- ------------------------------------------------------
 -- Server version	5.7.26-log
 
@@ -18,7 +17,7 @@ SET @MYSQLDUMP_TEMP_LOG_BIN = @@SESSION.SQL_LOG_BIN;
 SET @@SESSION.SQL_LOG_BIN= 0;
 
 --
--- GTID state at the beginning of the backup 
+-- GTID state at the beginning of the backup
 --
 
 SET @@GLOBAL.GTID_PURGED='';
