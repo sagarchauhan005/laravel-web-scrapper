@@ -31,6 +31,7 @@ class ValidationHelper
         $validator = Validator::make($request->all(), [
             'link' => 'required|string',
             'page' => 'required|integer',
+            'totalPages'=>'required|integer',
         ]);
         return $validator->errors();
     }

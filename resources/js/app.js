@@ -16,22 +16,47 @@ let compTableElem = $(".load-companies-table");
 let exist = compTableElem.length;
 let noData = "<p class='alert alert-danger'>Unable to fetch data....</p>";
 let table = $("#companies-table");
-
-function alterLinks() {
-    $('#table-results tr td:nth-child(2) a').each(function (index, elem) {
-        if (elem instanceof HTMLAnchorElement) {
-            let href = elem.getAttribute('href');
-            let replace = href.replace('/business/','get-business?company=');
-            elem.setAttribute('href',replace);
+let companyListTable = $('#table-results');
+/*
+* Cleans up table and set it up
+* */
+function setUpTable() {
+    companyListTable.html('');
+    companyListTable.append('' +
+        '<tr>' +
+        '<th>CIN</th>' +
+        '<th>Company Name</th>' +
+        '<th>Class</th>' +
+        '<th>Status</th>' +
+        '</tr>'
+    );
+}
+/*
+* Appends each tale row result into table
+* */
+function appendResults(data) {
+    let response = data.response;
+    let size = response.length;
+    if(data.response !== "null" && size>0){
+        for (let i = 0; i < size; i++) {
+            companyListTable.append('' +
+                '<tr>' +
+                    '<td>'+response[i][0]+'</td>' +
+                    '<td><a href="get-business?company='+response[i][4]+'">'+response[i][1]+'</a></td>' +
+                    '<td>'+response[i][2]+'</td>' +
+                    '<td>'+response[i][3]+'</td>' +
+                '</tr>'
+            );
         }
-
-    });
+    }else{
+        companyListTable.html('<p class="alert alert-danger">No more data available....</p>')
+    }
 }
 
 /*
 * Fetches the data over network and perform operation in table
 * */
-function fetchData(link, page) {
+function fetchData(link, page, totalPages) {
     $('.spinner-border').show();
     let pageInt = parseInt(page);
     let prev = pageInt - 1;
@@ -40,17 +65,19 @@ function fetchData(link, page) {
     $.ajax({
         type: "GET",
         url: "/get-companies-table-by-page",
-        data: {link : link, page : page},
+        data: {link : link, page : page, totalPages : totalPages},
         success: function(data) {
             $('.spinner-border').hide();
             if(data===undefined || data==null || data.length===0){
                 table.prepend(noData);
             }else{
-                table.html(data);
-                alterLinks();
+                //console.log(data);
+                setUpTable();
+                appendResults(data);
                 $("#prev").attr('data-page',prev);
                 $("#next").attr('data-page',next);
-                $("#total-pages").text($('#table-results').attr('data-pages'));
+                $("#total-pages").text(data.total_pages);
+                compTableElem.attr('data-total-pages',data.total_pages);
                 $("#current-page").text(page);
             }
         },
@@ -63,7 +90,8 @@ function fetchData(link, page) {
 
 if(exist){
     let link = compTableElem.attr('data-link');
-    fetchData(link, 1);
+    let totalPages = compTableElem.attr('data-total-pages');
+    fetchData(link, 1, totalPages);
 }
 
 /*
@@ -74,7 +102,8 @@ $(".loadMore").click(function () {
     let loadMore = $(this);
     let link = loadMore.attr('data-link');
     let page = loadMore.attr('data-page');
+    let totalPages = compTableElem.attr('data-total-pages');
 
     //fetch data
-    fetchData(link,page);
+    fetchData(link,page, totalPages);
 });

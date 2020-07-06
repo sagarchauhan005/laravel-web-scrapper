@@ -6,6 +6,7 @@ use App\Http\Helpers\CompanyBusinessPageParser;
 use App\Http\Helpers\ValidationHelper;
 use Goutte\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CompanyDataController extends Controller
 {
@@ -52,7 +53,7 @@ class CompanyDataController extends Controller
     /**
      * Returns all the company page by page
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|null
+     * @return array|\Illuminate\Http\RedirectResponse|null
      */
     public function getCompaniesByPage(Request $request){
         $error = ValidationHelper::validateCompanyTypeByPage($request);
@@ -62,26 +63,35 @@ class CompanyDataController extends Controller
 
         $next = urldecode($request->get('link'));
         $page = $request->get('page');
+        $totalPages = $request->get('totalPages');
         $uri = $next."/page/".$page; //per page URI
         if($page>-1){
             //crawler
             $client = new Client();
             $crawler = $client->request('GET', $this->base_url.$uri);
-            $totalPages = self::getTotalPages($crawler);
+            $totalPages = ($totalPages==0) ? self::getTotalPages($crawler) : $totalPages;
 
-            $data = $crawler->filter('.table > tbody')->each(function ($node) {
-                return $node->html();
+            $data = $crawler->filter('.table > tbody')->filter('tr')->each(function ($tr, $i) {
+                $row =  $tr->filter('td')->each(function ($td, $i) {
+                    return trim($td->text());
+                });
+                if($i>0){ //skipping table head row
+                    $link = Str::slug($row[1]);  //creates link for each entry
+                    array_push($row, $link);
+                    return $row;
+                }
             });
 
-            echo "<table class='table table-bordered' data-pages='".$totalPages."' id='table-results'><tbody>";
-            if($page<$totalPages){
-                foreach ($data as $comp){
-                    echo $comp;
-                }
-            }else{
-                echo "<p class='alert alert-danger'>No more data available. Go back</p>";
+            if(sizeof($data)>0){
+                unset($data[0]); //removes the first element for heading
+
+                $response = ($page<$totalPages) ? array_values($data) : [];
+                return [
+                    'response'=>$response,
+                    'total_pages'=>$totalPages,
+                ];
             }
-            echo "</tbody></table>";
+            return null;
         }else{
             return null;
         }

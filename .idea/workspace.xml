@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="751b6e6c-990f-4661-969e-edc7d4d9f2ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands/CreateDatabaseCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_06_091007_companies_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/composerJson.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Helpers/CompanyBusinessPageParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Helpers/CompanyBusinessPageParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyDataController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Helpers/ValidationHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Helpers/ValidationHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/company-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/company-page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/company-types.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/company-types.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/get-companies-business-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/get-companies-business-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/get-companies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/get-companies.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,10 +215,10 @@
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
     <state x="550" y="205" width="881" height="702" key="find.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1593707377263" />
-    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup" timestamp="1594026791911">
+    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup" timestamp="1594030084610">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1594026791910" />
+    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1594030084610" />
     <state x="688" y="455" width="605" height="200" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1594025639777">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
