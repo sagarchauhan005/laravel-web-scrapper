@@ -19,7 +19,7 @@ Webscrapper made using Laravel and Javascript for fun.
         3. Run `php artisan reset:tables`, on a safer side, if you find any values pre-existing in the tables. It shall reset all the values.
 7. Run `php artisan serve`
 
-#Examples
+# Examples
 
 Screen 1
 
