@@ -4,8 +4,8 @@
 $(".company-item").click(function () {
     let link = $(this).attr('data-link');
     let type = $(this).attr('data-name');
-    let url = "/get-companies?link="+link+"&type="+type;
-    window.location.href=url;
+    let id = $(this).attr('data-id');
+    window.location.href="/get-companies?link=" + link + "&type=" + type + "&id=" + id;
 });
 
 
@@ -56,7 +56,7 @@ function appendResults(data) {
 /*
 * Fetches the data over network and perform operation in table
 * */
-function fetchData(link, page, totalPages) {
+function fetchData(link, page, totalPages, id) {
     $('.spinner-border').show();
     let pageInt = parseInt(page);
     let prev = pageInt - 1;
@@ -65,7 +65,7 @@ function fetchData(link, page, totalPages) {
     $.ajax({
         type: "GET",
         url: "/get-companies-table-by-page",
-        data: {link : link, page : page, totalPages : totalPages},
+        data: {link : link, page : page, totalPages : totalPages, id : id},
         success: function(data) {
             $('.spinner-border').hide();
             if(data===undefined || data==null || data.length===0){
@@ -90,8 +90,9 @@ function fetchData(link, page, totalPages) {
 
 if(exist){
     let link = compTableElem.attr('data-link');
+    let id = compTableElem.attr('data-id');
     let totalPages = compTableElem.attr('data-total-pages');
-    fetchData(link, 1, totalPages);
+    fetchData(link, 1, totalPages, id);
 }
 
 /*
@@ -102,8 +103,9 @@ $(".loadMore").click(function () {
     let loadMore = $(this);
     let link = loadMore.attr('data-link');
     let page = loadMore.attr('data-page');
+    let id = compTableElem.attr('data-id');
     let totalPages = compTableElem.attr('data-total-pages');
 
     //fetch data
-    fetchData(link,page, totalPages);
+    fetchData(link,page, totalPages, id);
 });

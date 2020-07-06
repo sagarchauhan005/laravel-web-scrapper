@@ -6,7 +6,7 @@ namespace App\Http\Helpers;
 
 use Illuminate\Support\Str;
 
-class CompanyBusinessPageParser
+class CompanyDataParser
 {
 
     public $crawler;
@@ -93,4 +93,23 @@ class CompanyBusinessPageParser
             ];
         });
      }
+
+    /** Gets List of company
+     * @param \Symfony\Component\DomCrawler\Crawler $crawler
+     * @return array
+     */
+    public static function getCompaniesList(\Symfony\Component\DomCrawler\Crawler $crawler,  $cmp_id)
+    {
+        return $crawler->filter('.table > tbody')->filter('tr')->each(function ($tr, $i) use( $cmp_id) {
+            $row =  $tr->filter('td')->each(function ($td, $i) {
+                return trim($td->text());
+            });
+
+            if($i>0){ //skipping table head row
+                $link = Str::slug($row[1])."&id=".$cmp_id;  //creates link for each entry
+                array_push($row, $link);
+                return $row;
+            }
+        });
+    }
 }

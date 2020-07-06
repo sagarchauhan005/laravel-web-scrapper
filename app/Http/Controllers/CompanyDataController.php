@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Helpers\CompanyBusinessPageParser;
+use App\Http\Helpers\CompanyDataParser;
+use App\Http\Helpers\DatabaseController;
+use App\Http\Helpers\Helper;
 use App\Http\Helpers\ValidationHelper;
 use Goutte\Client;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
+use Symfony\Component\DomCrawler\Crawler;
 
 class CompanyDataController extends Controller
 {
 
     /**
      * Return the view with a list of company data fetched from a website
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
 
     public $base_url;
@@ -21,39 +27,33 @@ class CompanyDataController extends Controller
         $this->base_url = "http://www.mycorporateinfo.com/";
     }
 
+    /**
+     *  STEP 1
+     * Renders the index page
+     * @return Factory|View
+     */
     public function index(){
         $client = new Client();
         $crawler = $client->request('GET', $this->base_url.'industry');
         $data = $crawler->filter('li.list-group-item > a')->each(function ($node) {
+            $id = DatabaseController::saveCompaniesCategories($node->text()); //updates the database
+            $link = $node->link()->getUri();
             return [
                 'name'=>$node->text(),
-                'link'=>urlencode(str_replace($this->base_url,'',$node->link()->getUri())),
+                'link'=>urlencode(str_replace($this->base_url,'',$link)),
+                'cmp_id'=>$id
             ];
         });
 
         return view('pages/index')->with('companies',$data);
     }
 
-    /** Gets the total number of pages for this list
-     * @param \Symfony\Component\DomCrawler\Crawler $crawler
-     * @return mixed
-     */
-    private static function getTotalPages(\Symfony\Component\DomCrawler\Crawler $crawler)
-    {
-        $pages = $crawler->filter('.pagination > li')->each(function ($node) {
-            return $node->text();
-        });
-
-        //remove the last element
-        array_pop($pages);
-        return $pages[sizeof($pages)-1];
-    }
-
 
     /**
+     * STEP 2
      * Returns all the company page by page
      * @param Request $request
-     * @return array|\Illuminate\Http\RedirectResponse|null
+     * @return array|RedirectResponse|null
      */
     public function getCompaniesByPage(Request $request){
         $error = ValidationHelper::validateCompanyTypeByPage($request);
@@ -63,44 +63,40 @@ class CompanyDataController extends Controller
 
         $next = urldecode($request->get('link'));
         $page = $request->get('page');
+        $cmp_id = $request->get('id');
         $totalPages = $request->get('totalPages');
         $uri = $next."/page/".$page; //per page URI
+
         if($page>-1){
+
             //crawler
             $client = new Client();
             $crawler = $client->request('GET', $this->base_url.$uri);
-            $totalPages = ($totalPages==0) ? self::getTotalPages($crawler) : $totalPages;
+            $totalPages = ($totalPages==0) ? Helper::getTotalPages($crawler) : $totalPages;
 
-            $data = $crawler->filter('.table > tbody')->filter('tr')->each(function ($tr, $i) {
-                $row =  $tr->filter('td')->each(function ($td, $i) {
-                    return trim($td->text());
-                });
-                if($i>0){ //skipping table head row
-                    $link = Str::slug($row[1]);  //creates link for each entry
-                    array_push($row, $link);
-                    return $row;
-                }
-            });
-
+            // gets the list
+            $data = CompanyDataParser::getCompaniesList($crawler, $cmp_id);
             if(sizeof($data)>0){
                 unset($data[0]); //removes the first element for heading
-
                 $response = ($page<$totalPages) ? array_values($data) : [];
+                DatabaseController::savesListOfCompanies($data, $cmp_id, $page); //updates the database
                 return [
                     'response'=>$response,
                     'total_pages'=>$totalPages,
                 ];
             }
-            return null;
-        }else{
+
             return null;
         }
+
+        return null;
     }
 
     /**
+     * STEP 3
      * Returns specific company data
      * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     * @return Factory|RedirectResponse|View
      */
     public function getBusiness(Request $request){
         $error = ValidationHelper::validateBusiness($request);
@@ -109,24 +105,26 @@ class CompanyDataController extends Controller
         }
 
         $company  = $request->get('company');
+        $cmp_id  = $request->get('id');
         $uri = "business/".$company;
         $client = new Client();
         $crawler = $client->request('GET', $this->base_url.$uri);
 
         //start fetching data
         $response = self::getCompanyData($crawler);
-        //echo "<pre>"; print_r($response); die();
+        DatabaseController::savesSingleCompanyData($response, $cmp_id); //updates the database
         return view('pages/get-companies-business-page')->with('company',$response);
     }
 
     /**
+     * STEP 3.1
      * Collate all the data;
-     * @param \Symfony\Component\DomCrawler\Crawler $crawler
+     * @param Crawler $crawler
      * @return array
      */
-    private static function getCompanyData(\Symfony\Component\DomCrawler\Crawler $crawler)
+    private static function getCompanyData(Crawler $crawler)
     {
-        $parser = new CompanyBusinessPageParser($crawler);
+        $parser = new CompanyDataParser($crawler);
         $heading = $parser->getHeading();
         $companyDesc = $parser->getDescription();
         $companyInfo = $parser->getCompanyTableByPath('#companyinformation > table > tbody');

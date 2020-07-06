@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="751b6e6c-990f-4661-969e-edc7d4d9f2ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CompanyCategories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/CompanyCategoriesList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/ResetDatabase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Helpers/DatabaseController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Helpers/Helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/SingleCompanyData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_06_114830_companies_by_type_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_06_122316_single_company_data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscrapper.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Helpers/CompanyBusinessPageParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Helpers/CompanyDataParser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Helpers/ValidationHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Helpers/ValidationHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/get-companies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/get-companies.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +37,50 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Web Scrapper" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Web Scrapper" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Web Scrapper" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="webscrapper: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Web Scrapper" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="webscrapper: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="companies_categories: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Web Scrapper" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="webscrapper: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="single_company_data: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -30,6 +90,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -149,6 +216,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -181,6 +249,7 @@
       <workItem from="1593703900390" duration="23544000" />
       <workItem from="1593772683928" duration="3002000" />
       <workItem from="1593781247826" duration="11593000" />
+      <workItem from="1594039131049" duration="2594000" />
     </task>
     <servers />
   </component>
@@ -195,18 +264,26 @@
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
     <state x="585" y="218" width="800" height="675" key="#SQL_Dialects/61.33.1859.1047@61.33.1859.1047" timestamp="1594026181513" />
-    <state x="472" y="33" width="1017" height="1045" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593760685197">
+    <state x="557" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594031940279">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="472" y="33" width="1017" height="1045" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593760685197" />
+    <state x="557" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1594031940279" />
+    <state x="472" y="33" width="1017" height="1045" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594036591706">
+      <screen x="61" y="33" width="1859" height="1047" />
+    </state>
+    <state x="472" y="33" width="1017" height="1045" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1594036591706" />
+    <state x="670" y="362" width="630" height="386" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1594041310838">
+      <screen x="61" y="33" width="1859" height="1047" />
+    </state>
+    <state x="670" y="362" width="630" height="386" key="DUMP_DIALOG_DIMENSION_KEY/61.33.1859.1047@61.33.1859.1047" timestamp="1594041310838" />
     <state x="713" y="311" key="FileChooserDialogImpl" timestamp="1594026179749">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
     <state x="713" y="311" key="FileChooserDialogImpl/61.33.1859.1047@61.33.1859.1047" timestamp="1594026179749" />
-    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog" timestamp="1593779412078">
+    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog" timestamp="1594036464164">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1593779412078" />
+    <state x="467" y="338" width="1036" height="435" key="NewPhpClassDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1594036464164" />
     <state x="737" y="473" width="476" height="165" key="NewPhpFileDialog" timestamp="1593711508542">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
@@ -215,13 +292,21 @@
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
     <state x="550" y="205" width="881" height="702" key="find.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1593707377263" />
-    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup" timestamp="1594030084610">
+    <state x="692" y="188" width="586" height="735" key="refactoring.ChangeSignatureDialog" timestamp="1594037140168">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1594030084610" />
-    <state x="688" y="455" width="605" height="200" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1594025639777">
+    <state x="692" y="188" width="586" height="735" key="refactoring.ChangeSignatureDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1594037140168" />
+    <state x="654" y="255" key="run.anything.popup" timestamp="1594040657509">
       <screen x="61" y="33" width="1859" height="1047" />
     </state>
-    <state x="688" y="455" width="605" height="200" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1594025639777" />
+    <state x="654" y="255" key="run.anything.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1594040657509" />
+    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup" timestamp="1594041765057">
+      <screen x="61" y="33" width="1859" height="1047" />
+    </state>
+    <state x="653" y="263" width="733" height="679" key="search.everywhere.popup/61.33.1859.1047@61.33.1859.1047" timestamp="1594041765057" />
+    <state x="688" y="455" width="605" height="200" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1594038236583">
+      <screen x="61" y="33" width="1859" height="1047" />
+    </state>
+    <state x="688" y="455" width="605" height="200" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/61.33.1859.1047@61.33.1859.1047" timestamp="1594038236583" />
   </component>
 </project>

@@ -4,8 +4,10 @@
         <div class="row card info-card">
             <div class="col-md-12">
                 <h4><b>Laravel web scrapper</b></h4>
-                <p>I started this project while learning <b>Data Structures and Algorithms</b> using Javascript and thought of putting it out as a website for others to use it and interact with it to try themselves how the code is working.
-                    Below mentioned is the list of programs written.</p>
+                <p>I started this project to create a small level web-scrapper</p>
+                <p>The web scrapper scraps all the data as you visit each and every link.</p>
+                <p><b>For any issue</b> : Please refer to the readme file for this github repo</p>
+                <p><b>Target:</b> http://www.mycorporateinfo.com/ </p>
             </div>
         </div>
     </div>
@@ -17,7 +19,7 @@
             <h4 class="mb-4"><b>Select a company</b></h4>
             <ul class="list-group">
                 @foreach($companies as $company)
-                        <li class="list-group-item company-item" data-link="{{$company['link']}}" data-name="{{urlencode($company['name'])}}">
+                        <li class="list-group-item company-item" data-link="{{$company['link']}}" data-id="{{$company['cmp_id']}}" data-name="{{urlencode($company['name'])}}">
                             {{$company['name']}}
                         </li>
                 @endforeach
